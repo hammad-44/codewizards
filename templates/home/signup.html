@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block title %}Login {% endblock title %}
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    {% block mycss %} 
+    <style media="screen">@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+      
+        .wrapper{
+          position: relative;
+          max-width: 430px;
+          width: 100%;
+          background: #fff;
+          padding: 34px;
+          border-radius: 6px;
+          box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .wrapper h2{
+          position: relative;
+          font-size: 22px;
+          font-weight: 600;
+          color: #333;
+        }
+        .wrapper h2::before{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          width: 28px;
+          border-radius: 12px;
+          background: #4070f4;
+        }
+        .wrapper form{
+          margin-top: 30px;
+        }
+        .wrapper form .input-box{
+          height: 52px;
+          margin: 18px 0;
+        }
+        form .input-box input{
+          height: 100%;
+          width: 100%;
+          outline: none;
+          padding: 0 15px;
+          font-size: 17px;
+          font-weight: 400;
+          color: #333;
+          border: 1.5px solid #C7BEBE;
+          border-bottom-width: 2.5px;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+        }
+        .input-box input:focus,
+        .input-box input:valid{
+          border-color: #4070f4;
+        }
+        form .policy{
+          display: flex;
+          align-items: center;
+        }
+        form h3{
+          color: #707070;
+          font-size: 14px;
+          font-weight: 500;
+          margin-left: 10px;
+        }
+        .input-box.button input{
+          color: #fff;
+          letter-spacing: 1px;
+          border: none;
+          background: #4070f4;
+          cursor: pointer;
+        }
+        .input-box.button input:hover{
+          background: #0e4bf1;
+        }
+        form .text h3{
+         color: #333;
+         width: 100%;
+         text-align: center;
+        }
+        form .text h3 a{
+          color: #4070f4;
+          text-decoration: none;
+        }
+        form .text h3 a:hover{
+          text-decoration: underline;
+        }
+        .wrapper-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2% 0px;
+        }
+
+    </style>
+    {% endblock mycss %}
+    {% block body %}
+    <!DOCTYPE html>
+    <!-- Coding by CodingLab | www.codinglabweb.com-->
+<div class="wrapper-container">
+      <div class="wrapper">
+        <h2>Create Account</h2>
+        {% csrf_token %}
+        <form action="/signup" method="post">
+          <div class="input-box">
+            <input type="text" placeholder="Enter Your First Name"  name="fname"  required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Enter Your Last Name" name="lname"  required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Create  UserName" name="username"  required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Enter Your Email" name="email"  required>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Create Password"  name="pass1" required>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Confirm password"  name="pass2" required>
+          </div>
+          {% csrf_token %}
+          <div class="input-box button">
+            <input type="Submit" value="Create Account">
+          </div>
+          <div class="text">
+            <h3>Already have an account? <a href="/login">Login now</a></h3>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    {% endblock body %}

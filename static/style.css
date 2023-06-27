@@ -1,0 +1,162 @@
+
+/* Navbar ki sarri css */
+nav {
+    background-color: #333;
+    height: 70px;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+  }
+  
+  nav .logo img {
+    height: 50px;
+    /* border-radius: 50%; */
+  }
+  
+  nav .menu-left {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .menu-left li {
+    margin-right: 20px;
+  }
+  
+  nav .menu-left li:last-child {
+    margin-right: 0;
+  }
+  
+  nav .menu-left li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  nav .menu-left li a:hover {
+    background-color: #111;
+  }
+  
+  nav .menu-right {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .menu-right li {
+    margin-left: 20px;
+  }
+  
+  nav .menu-right li:first-child {
+    margin-left: 0;
+  }
+  
+  nav .menu-right li a {
+    display: block;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  nav .menu-right li a:hover {
+    background-color: #3e8e41;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    nav {
+      flex-wrap: wrap;
+    }
+    
+    nav .menu-left {
+      flex-basis: 100%;
+      margin-bottom: 10px;
+    }
+    
+    nav .menu-left li {
+      text-align: center;
+      width: 100%;
+      margin-right: 0;
+    }
+    
+    nav .menu-left li:last-child {
+      margin-bottom: 10px;
+    }
+    
+    nav .menu-right {
+      margin-left: auto;
+    }
+  }
+  
+
+
+
+
+
+
+  
+
+/* Form ki sarri css */
+.container-contact {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+    z-index: 100;
+    margin: 3% auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+  }
+  
+  form {
+    border: 0px solid #f1f1f1;
+    padding: 20px;
+  }
+  
+  input[type=text], input[type=email], input[type=tel], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+  }
+  
+
+
+
+
+/* Footer ki sarri css */

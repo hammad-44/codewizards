@@ -1,0 +1,620 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block mycss %}
+<style media="screen">
+    html {
+        scroll-behavior: smooth;
+      }
+    .marg-y {
+        margin: 3% 0;
+    }
+
+    .hero-section {
+        width: 95%;
+        height: 700px;
+        display: flex;
+        flex-direction: row;
+        margin: 36px;
+        padding: 0px;
+    }
+
+    .first-section {
+        padding: 4px;
+        margin: 23px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .first {
+        border-radius: 30px;
+        background-color: #ffe7eb;
+        color: #ff5574;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        font-size: 12px;
+        margin-top: 44px;
+        margin-left: 74px;
+        padding-top: 9px;
+    }
+
+    .second {
+        padding: 24px;
+        margin-left: 50px;
+        font-size: 23px;
+
+    }
+
+    .second h1 {
+        font-size: 25px;
+        margin: 0px;
+        height: 45px;
+    }
+
+    .third {
+        margin: 14px;
+        font-size: 12px;
+        margin: 34px;
+        padding-left: 34px;
+        height: 89px;
+    }
+
+    .second-section {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 37px;
+        width: 150%;
+        height: 450px;
+    }
+
+    .img-pic {
+        border: 2px solid red;
+    }
+
+
+    .btn-hero {
+        color: #ffffff;
+        background-color: #ff5574;
+        padding: 6px;
+        border: none;
+        cursor: pointer;
+        font-size: 13px;
+        border-radius: 30px;
+    }
+
+
+    .hero-a {
+        text-decoration: none;
+    }
+
+    .hero-a:hover {
+        color: #ff5574;
+        background-color: #ffffff;
+    }
+
+    #button-1:hover {
+        border: 1px solid #ff5574;
+
+    }
+
+    #button-2 {
+        text-decoration: underline;
+        background-color: #ffffff;
+        color: black;
+    }
+
+    #button-2:hover {
+        color: blue;
+    }
+
+    @media only screen and (max-width: 1280px) {
+        .hero-section {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .first-section {
+            height: auto;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .second-section {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .second {
+            margin: 20px 0;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .third {
+            margin: 20px 0;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        .btn-hero  {
+            margin: 10px;
+            font-size: 16px;
+        }
+    }
+
+    .container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .team-member {
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+        box-shadow: 0px 0px 10px #ccc;
+
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .team-member h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .team-member p {
+        font-size: 18px;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+        margin-top:3px;
+    }
+
+    .social-icons i {
+        font-size: 24px;
+    }
+    @media only screen and (max-width: 440px){
+        .third{
+            margin-top:25%;
+        }
+    }
+    @media only screen and (max-width: 350px){
+        .third{
+            margin-top:42%;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .team-member {
+            width: 80%;
+        }
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        .team-member {
+            width: 40%;
+        }
+    }
+
+    .about-team {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .about-team h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .about-team p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.wrapper3{
+  display: grid;
+  margin: 200px 90px auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+@media (max-width: 700px) {
+  .wrapper3{
+    margin: 200px auto;
+  }
+}
+.wrapper3 .box{
+  width: 350px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1000px;
+}
+.wrapper3 .box .front-face{
+ 
+  height: 220px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+.box .front-face .icon2{
+  height: 80px;
+}
+.box .front-face .icon2 i{
+  font-size: 65px;
+}
+.box .front-face span,
+.box .back-face span{
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .front-face .icon2 i,
+.box .front-face span{
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.box .back-face{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 220px;
+  width: 100%;
+  padding: 30px;
+  color: #fff;
+  opacity: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transform: translateY(110px) rotateX(-90deg);
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+.box .back-face p{
+  margin-top: 10px;
+  text-align: justify;
+}
+.box:hover .back-face{
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+.box:hover .front-face{
+  opacity: 0;
+  transform: translateY(-110px) rotateX(90deg);
+}
+.contact-form{
+    display:flex;
+    margin:30px 4%;
+  }
+  .contact-form > * {
+    width:50%;
+  }
+  .contact-form .first-container{
+    background:linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("images/bg.jpg") center center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .contact-form .first-container .info-container div{
+    margin:24px 0;
+  }
+  .contact-form .first-container .info-container div h3{
+    color:#fff;
+    font-size:18px;
+    font-weight: 400;
+    line-height: 1.2;
+    padding-bottom: 10px;
+  }
+  .contact-form .first-container .info-container div p{
+    font-size: 16px;
+    line-height: 1.6;
+    color:#00ad5f;
+  }
+  .contact-form .first-container .info-container div:first-of-type p{
+    max-width:260px;
+    color:#999;
+  }
+  .contact-form .second-container{
+    padding:30px;
+  }
+  .contact-form .second-container form{
+    display:flex;
+    flex-direction: column;
+  }
+  .contact-form .second-container h2{
+    font-size:30px;
+    font-weight:400;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom:20px;
+  } 
+  .contact-form .second-container form .form-group{
+    margin-bottom:10px;
+  }
+  .contact-form .second-container form .form-group *{
+     min-height: 55px;
+     border:1px solid #e6e6e6;
+     padding:0 20px;
+  }
+  .contact-form .second-container form .form-group label{
+    display:flex;
+    align-items:center;
+    width:100%;
+    border:1px solid #e6e6e6;
+    font-size:16px;
+    text-transform: uppercase;
+    margin-top:-1px;
+  }
+  .contact-form .second-container form .form-group:first-of-type input{
+    width:50.1%;
+    margin-right:-5px;
+  }
+  .contact-form .second-container form .form-group input{
+    width:100%;
+    font-size:15px;
+    margin-top:-2px;
+  }
+  .contact-form .second-container form .form-group input::placeholder,
+  .contact-form .second-container form .form-group .textarea::placeholder{
+    color:#999;
+  }
+  .contact-form .second-container form .form-group .textarea{
+    width:100%;
+    min-height: 80px;
+    resize:none;
+    padding:10px 20px;
+    margin-top:-1px;
+  }
+  .contact-form .second-container form .btn{
+    width:200px;
+    height:50px;
+    background:#00ad5f;
+    color:#fff;
+    font-size:17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border:0;
+    position:relative;
+    left:calc(50% - 100px);
+    cursor:pointer;
+  }
+  .contact-form .second-container form .btn:hover{
+    background:#333;
+  }@media screen and (max-width:800px){
+    .contact-form{
+      width:90vw;
+    }
+  }
+  @media screen and (max-width:700px){
+    .contact-form{
+      flex-direction: column-reverse;
+    }
+    .contact-form > *{
+      width:100%;
+    }
+    .contact-form .first-container{
+      padding:40px 0;
+    }
+  }
+  
+
+
+</style>
+{% endblock mycss %}
+{% block body %}
+
+<div class="hero-section" id="home">
+    <div class="first-section">
+        <div class="xyz">
+            <div class="second">
+                <h1>The best way to predict the future is to create it.</h1>
+            </div>
+            <div class="third">
+                
+                <div>
+                    <a href="#services" class="btn-hero  hero-a" id="button-1">Offered Services</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="second-section">
+
+        <img src="{%static 'img/hello.svg' %}" alt="">
+    </div>
+</div>
+
+<div id="services" class="about-team">
+    <h2 >Our Services</h2>   
+    <div class="wrapper3">
+         <div class="box">
+            <div class="front-face">
+               <div class="icon2">
+                <i class="fa-solid fa-code fa-beat"></i>
+               </div>
+               <span>Web Design</span>
+            </div>
+            <div class="back-face">
+               <span>Web Design</span>
+               <p>
+                Web design service involves creating visually appealing, user-friendly, and functional websites to meet the specific needs of businesses or individuals.
+               </p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon2">
+                <i class="fa-solid fa-bezier-curve fa-beat"></i>
+               </div>
+               <span>Graphic Design</span>
+            </div>
+            <div class="back-face">
+               <span>Graphic Design</span>
+               <p>
+                Graphic design is the process of creating visual content, such as logos, brochures, and advertisements, using typography, colors, and images.
+               </p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon2">
+                <i class="fa-solid fa-laptop-code fa-beat"></i>
+               </div>
+               <span>Front End Development</span>
+            </div>
+            <div class="back-face">
+               <span>Front End</span>
+               <p>
+                Front-end web development involves coding the user interface of a website using HTML,CSS,and JavaScript.
+               </p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon2">
+                <i class="fa-brands fa-wordpress fa-beat"></i>
+                </div>
+               <span>WordPress</span>
+            </div>
+            <div class="back-face">
+               <span>WordPress</span>
+               <p>
+                WordPress is a popular content management system that allows users to create and manage websites easily              
+             </p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="front-face">
+               <div class="icon2">
+                <i class="fa-brands fa-python fa-beat"></i>
+               </div>
+               <span>Full Stack Development</span>
+            </div>
+            <div class="back-face">
+               <span>Full Stack Development</span>
+               <p>
+                  Full-stack web development involves designing and developing both the front-end and back-end components of a website or web application
+               </p>
+            </div>
+         </div>
+      </div>
+</div>
+
+<div id="about" class="marg-y">
+    <div class="about-team">
+        <h2>About Team</h2>
+        <p>We are a team of highly skilled individuals with expertise in various fields, working together to deliver
+            top-quality solutions to our clients.</p>
+    </div>
+    <div class="container2">
+        <div class="team-member">
+            <img src="{%static 'img/team-member-2.svg' %}" alt="Profile Picture">
+            <h3>Hammad Haider</h3>
+            <p>Full stack Developer</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="{%static 'img/team-member-2.svg' %}" alt="Profile Picture">
+            <h3>Zeeshan Farooq</h3>
+            <p>Front-end Developer</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="{%static 'img/team-member-2.svg' %}" alt="Profile Picture">
+            <h3>Aman Aslam</h3>
+            <p>Front-end Developer</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div  id="contact">
+<h1 class="about-team">Contact Us</h1>
+<div class="contact-form">
+    <div class="first-container">
+     <div class="info-container">
+       <div> 
+         <h3>Address</h3>
+         <p>Lahore, Pakistan</p>
+       </div>
+       <div> 
+         <h3>Lets Talk</h3>
+        <a href="tel:03104416475"> <p>+92-310-4416475</p></a>
+       </div>
+       <div> 
+         <h3>General Support</h3>
+         <a href="mailto:codewizards665@gmail.com"> <p>codewizards665@gmail.com</p></a>
+       </div>
+     </div>
+    </div>
+    <div class="second-container">
+      <h2>Send Us A Message</h2>
+      {% csrf_token %}
+      <form action="/contact" method="post">
+        <div class="form-group">
+          <label for="name-input">Tell us your name*</label>
+          <input id="name-input" type="text" placeholder="Name" name='name' required="">
+        </div>
+        <div class="form-group">
+          <label for="email-input">Enter your email</label>
+          <input id="email-input" type="text" name='email' placeholder="Eg. example@gmail.com" required="">
+        </div>
+        <div class="form-group">
+          <label for="phone-input">Enter phone number</label>
+          <input id="phone-input" type="text" name='phone' placeholder="Eg. _1800 000000" required="">
+        </div>
+        <div class="form-group">
+          <label for="message-textarea">Message</label>
+          <input class="textarea" id="message-textarea" name='message' placeholder="Write us a message"></input>
+        </div>
+        {% csrf_token %}
+        <button type='submit' class="btn">Send Now</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+{% endblock body %}
