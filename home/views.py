@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
-from home.models import Contact
-from blog.models import Post
+from home.models import Contactcode
+from blog.models import Postcode
 from django.contrib import  messages
 from django.contrib.auth  import authenticate,  login, logout
 from django.contrib.auth.models import User 
@@ -20,7 +20,7 @@ def contact(request):
         if len(name)<2 or len(email)<3 or len(phone)<10 or len(message)<4:
            messages.error(request, "Please fill the form correctly")
         else:
-            contact=Contact(name=name, email=email, phone=phone, message=message)
+            contact=Contactcode(name=name, email=email, phone=phone, message=message)
             contact.save()
             messages.success(request, "Your message has been successfully sent")
             return render(request, 'home/home.html')
@@ -30,11 +30,11 @@ def contact(request):
 def search(request):
     query=request.GET['query']
     if len(query)>78:
-        allPosts=Post.objects.none()
+        allPosts=Postcode.objects.none()
     else:
-        allPostsTitle= Post.objects.filter(title__icontains=query)
-        allPostsAuthor= Post.objects.filter(author__icontains=query)
-        allPostsContent =Post.objects.filter(content__icontains=query)
+        allPostsTitle= Postcode.objects.filter(title__icontains=query)
+        allPostsAuthor= Postcode.objects.filter(author__icontains=query)
+        allPostsContent =Postcode.objects.filter(content__icontains=query)
         allPosts=  allPostsTitle.union(allPostsContent, allPostsAuthor)
     if allPosts.count()==0:
         messages.warning(request, "No search results found. Please refine your query.")
@@ -87,7 +87,7 @@ def handeLogin(request):
             return redirect("home")
         else:
             
-            return render(request, 'home/signin.html', context)
+            return render(request, 'home/signin.html')
 
 
     return render(request, 'home/signin.html')

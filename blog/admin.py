@@ -1,10 +1,10 @@
 
 from django.contrib import admin
-from blog.models import Post, BlogComment
+from blog.models import Postcode, BlogCommentcode
 
-admin.site.register((BlogComment))
+admin.site.register((BlogCommentcode))
 
-@admin.register(Post)
+@admin.register(Postcode)
 
 class PostAdmin(admin.ModelAdmin):
     class Media:

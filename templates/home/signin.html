@@ -6,159 +6,129 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     {% block mycss %} 
     <style media="screen">
-      *,
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: #080710;
-}
-
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
-.background .shape{
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    border-radius: 50%;
-}
-.shape:first-child{
-    background: linear-gradient(
-        #1845ad,
-        #23a2f6
-    );
-    left: -80px;
-    top: -80px;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -30px;
-    bottom: -80px;
-}
-form{
-    height: 520px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
-}
-form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-}
-form h3{
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-}
-
-label{
-    display: block;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: 500;
-}
-input{
-    display: block;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
-}
-::placeholder{
-    color: #e5e5e5;
-}
-.loginbtn{
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.social{
-  margin-top: 30px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
-}
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+      
+        .wrapper{
+          position: relative;
+          max-width: 430px;
+          width: 100%;
+          background: #fff;
+          padding: 34px;
+          border-radius: 6px;
+          box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .wrapper h2{
+          position: relative;
+          font-size: 22px;
+          font-weight: 600;
+          color: #333;
+        }
+        .wrapper h2::before{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          width: 28px;
+          border-radius: 12px;
+          background: #4070f4;
+        }
+        .wrapper form{
+          margin-top: 30px;
+        }
+        .wrapper form .input-box{
+          height: 52px;
+          margin: 18px 0;
+        }
+        form .input-box input{
+          height: 100%;
+          width: 100%;
+          outline: none;
+          padding: 0 15px;
+          font-size: 17px;
+          font-weight: 400;
+          color: #333;
+          border: 1.5px solid #C7BEBE;
+          border-bottom-width: 2.5px;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+        }
+        .input-box input:focus,
+        .input-box input:valid{
+          border-color: #4070f4;
+        }
+        form .policy{
+          display: flex;
+          align-items: center;
+        }
+        form h3{
+          color: #707070;
+          font-size: 14px;
+          font-weight: 500;
+          margin-left: 10px;
+        }
+        .input-box.button input{
+          color: #fff;
+          letter-spacing: 1px;
+          border: none;
+          background: #4070f4;
+          cursor: pointer;
+        }
+        .input-box.button input:hover{
+          background: #0e4bf1;
+        }
+        form .text h3{
+         color: #333;
+         width: 100%;
+         text-align: center;
+        }
+        form .text h3 a{
+          color: #4070f4;
+          text-decoration: none;
+        }
+        form .text h3 a:hover{
+          text-decoration: underline;
+        }
+        .wrapper-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2% 0px;
+        }
 
     </style>
     {% endblock mycss %}
     {% block body %}
-    <div style="margin-bottom: 10%;">
-
-    </div>
-    <div style="height: 100%;">
-    <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    {% csrf_token %}
-    <form method="post" action="/login">
-        <h3 style="color: #516808;">Login Here</h3>
-
-        <label style="color: #516808;" for="loginusername">Username</label>
-        <input  style="color: #516808;    border: 3px solid;" type="text" placeholder="Enter Your Username" id="loginusername" name="loginusername">
-
-        <label style="color: #516808;" for="loginpassword">Password</label>
-        <input  style="color: #516808;    border: 3px solid;" type="password" placeholder="Password" id="loginpassword" name="loginpassword">
+  <!DOCTYPE html>
+<div class="wrapper-container" style="
+    margin: 9% 0%;
+">
+      <div class="wrapper">
+        <h2>Login</h2>
         {% csrf_token %}
-        <button class="loginbtn">Log In</button>
-        <div class="text">
-            <h4>New Here? <a href="/signup" style="          color: #4070f4;
-                text-decoration: none;">Create Account now</a></h4>
-          </div>
-    </form>
-    <div style="margin-top: 10%;">
+        <form action="/login" method="post">
 
+          <div class="input-box">
+            <input type="text" placeholder="Enter  UserName" name="loginusername"  required>
+          </div>
+          <div class="input-box">
+            <input type="text" placeholder="Enter Your Password" name="loginpassword"  required>
+          </div>
+
+          {% csrf_token %}
+          <div class="input-box button">
+            <input type="Submit" value="Login">
+          </div>
+          <div class="text">
+            <h3>Don't have an account? <a href="/signup">Sign Up now</a></h3>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
+    
     {% endblock body %}
